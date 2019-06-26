@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <!--  New User-->
+  
   <display-name>onlineExamSystem</display-name>
   <servlet>
     <servlet-name>NewUserReg</servlet-name>
@@ -9,6 +11,8 @@
     <servlet-name>NewUserReg</servlet-name>
     <url-pattern>/regUrl</url-pattern>
   </servlet-mapping>
+  
+  <!--  User Verification-->
   <servlet>
     <servlet-name>login-verify</servlet-name>
     <servlet-class>controller.LoginUser</servlet-class>
@@ -18,6 +22,7 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   
+  <!--  Administrator Verification-->
   <servlet>
     <servlet-name>adminVerify</servlet-name>
     <servlet-class>controller.adminLogin</servlet-class>
@@ -27,7 +32,7 @@
     <url-pattern>/adminVerify</url-pattern>
   </servlet-mapping>
   
-  
+  <!--  Paper Code Verification-->
   <servlet>
     <servlet-name>Code-verify</servlet-name>
     <servlet-class>controller.PaperCode</servlet-class>
@@ -36,6 +41,8 @@
     <servlet-name>Code-verify</servlet-name>
     <url-pattern>/verify</url-pattern>
   </servlet-mapping>
+  
+  <!-- Linking Question Paper -->
   <servlet>
     <servlet-name>LinkQP</servlet-name>
     <servlet-class>controller.QuestionPlink</servlet-class>
@@ -44,6 +51,8 @@
     <servlet-name>LinkQP</servlet-name>
     <url-pattern>/request-page</url-pattern>
   </servlet-mapping>
+  
+  <!-- Paper Submit -->
   <servlet>
     <servlet-name>testSubmit</servlet-name>
     <servlet-class>controller.TestSubmit</servlet-class>
@@ -52,6 +61,8 @@
     <servlet-name>testSubmit</servlet-name>
     <url-pattern>/testSubmit</url-pattern>
   </servlet-mapping>
+  
+  <!-- User Logout -->
   <servlet>
     <servlet-name>logout</servlet-name>
     <servlet-class>controller.Logout</servlet-class>
@@ -60,6 +71,8 @@
     <servlet-name>logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  
+  <!--  Administrator-->
   <servlet>
     <servlet-name>insertQset</servlet-name>
     <servlet-class>controller.QSetInsert</servlet-class>
@@ -68,6 +81,8 @@
     <servlet-name>insertQset</servlet-name>
     <url-pattern>/insertQset</url-pattern>
   </servlet-mapping>
+  
+  <!-- Welcome List of WEBSITE -->
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>regUser.jsp</welcome-file>
