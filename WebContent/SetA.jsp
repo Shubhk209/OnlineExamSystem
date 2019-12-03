@@ -40,30 +40,31 @@
 
         display.textContent = minutes + ":" + seconds; 
 
-        if (diff <= 0) {
-            // add one second so that the count down starts at the full duration
+        if (diff <= 0) 
+	{
+		
+            	// add one second so that the count down starts at the full duration
 			// example 10:00 not 09:59
-            start = Date.now() + 1000;
+            	start = Date.now() + 1000;
+		
+		//Stop the timer 
+		clearInterval(Interval);
+		
+		//Submit the form 
+		document.getElementById("form-test-submit").submit();
         }
     };
     // we don't want to wait a full second before the timer starts
     timer();
-    setInterval(timer, 1000);
+    Interval=setInterval(timer, 1000);
 }
 
 window.onload = function () {
-    var fiveMinutes = 60 * 15, //set time for the timer
+    var timerDurationInMin = 60 * 15, //set time for the timer
         display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+    startTimer(timerDurationInMin, display);
    
 };
-
-
-
-
-
-
-
 </script>
 
     <title>Test</title>
@@ -93,7 +94,7 @@ window.onload = function () {
       <div ><span style="font-size: 20px;">Username: ${username}</span><p class="float-right"><span id="time" ></span> minutes!</div></p><hr>
       <div>
 
-        <form action="testSubmit" method="post">
+        <form id="form-test-submit" action="testSubmit" method="post">
           <div class="form-group">
             <label><strong>Q1. Which one of the following is not a prime number?</strong></label><br>
             <input type="radio" name="q1" value="A" >A. 31 &nbsp
